@@ -546,6 +546,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#releasing" class="md-nav__link">
+    Releasing
+  </a>
+  
+    <nav class="md-nav" aria-label="Releasing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beta-releases" class="md-nav__link">
+    Beta releases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-releases" class="md-nav__link">
+    Production releases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#code-style" class="md-nav__link">
     Code Style
   </a>
@@ -782,6 +809,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#releasing" class="md-nav__link">
+    Releasing
+  </a>
+  
+    <nav class="md-nav" aria-label="Releasing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beta-releases" class="md-nav__link">
+    Beta releases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-releases" class="md-nav__link">
+    Production releases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#code-style" class="md-nav__link">
     Code Style
   </a>
@@ -968,6 +1022,28 @@ The <code>system</code> package bundles all the packages which are related to th
 </ul>
 <p>Additional labels can be used as a suffix. e.g "alpha".</p>
 <p>The version code in the develop branch should always be the highest. Therefore, when a new version is released in the release branch, it should be incremented as well.</p>
+<h3 id="releasing">Releasing<a class="headerlink" href="#releasing" title="Permanent link">&para;</a></h3>
+<p>Fastlane is used to partially automate the releasing process. Follow the <a href="https://docs.fastlane.tools/">guide</a> on the Fastlane website to set it up.</p>
+<h4 id="beta-releases">Beta releases<a class="headerlink" href="#beta-releases" title="Permanent link">&para;</a></h4>
+<h5 id="only-for-the-first-beta-release">Only for the first beta release<a class="headerlink" href="#only-for-the-first-beta-release" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Branch off develop into a new release branch (e.g release/2.3.0).</li>
+<li>Change the version name and version code in <code>version.properties</code> in the release branch.</li>
+<li>Change the version name and version code in <code>version.properties</code> in the develop branch to be one version ahead of the release branch.</li>
+</ol>
+<h5 id="for-every-release">For every release<a class="headerlink" href="#for-every-release" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Manually edit CHANGELOG.md in the develop branch with <em>all</em> changes.</li>
+<li>Open the KeyMapper folder in a terminal and run <code>fastlane beta</code>.</li>
+</ol>
+<h4 id="production-releases">Production releases<a class="headerlink" href="#production-releases" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Check that all translations are &gt;90% complete in CrowdIn.</li>
+<li>Credit the translators in the About screen in the app and in the index.md on the documentation website.</li>
+<li>Manually edit CHANGELOG.md with the <em>all</em> changes.</li>
+<li>Open the KeyMapper folder in a terminal and run <code>fastlane prod</code>. This will release the production build to the open-testing track on Google Play. Once it is approved by Google Play you must promote the release from open testing to the production track in Google Play.</li>
+<li>Squash and merge the release branch into master. Then delete the release branch.</li>
+</ol>
 <h3 id="code-style">Code Style<a class="headerlink" href="#code-style" title="Permanent link">&para;</a></h3>
 <p>Follow Google's Kotlin style guide. <a href="https://developer.android.com/kotlin/style-guide">https://developer.android.com/kotlin/style-guide</a></p>
 <h2 id="translating">Translating 🌍<a class="headerlink" href="#translating" title="Permanent link">&para;</a></h2>
